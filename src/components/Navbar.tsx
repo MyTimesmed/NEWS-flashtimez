@@ -37,7 +37,7 @@ export default function Navbar() {
   }, []);
 
   const featuredCategories = categories.slice(0, 4);
-  const allCategories = categories;
+  const remainingCategories = categories.slice(4);
 
   const currentTime = new Date().toLocaleTimeString("en-US", {
     hour12: false,
@@ -137,7 +137,7 @@ export default function Navbar() {
                 <input
                   type="text"
                   placeholder="Search for news, topics, or keywords..."
-                  className="w-full pl-12 pr-4 py-3 border border-flash-light rounded-lg focus:outline-none focus:ring-2 focus:ring-flash-primary focus:border-transparent bg-flash-secondary/5"
+                  className="w-full pl-12 pr-4 py-3 border border-flash-light rounded-lg focus:outline-none focus:ring-2 focus:ring-flash-primary focus:border-transparent bg-flash-secondary/5 text-flash-secondary placeholder-flash-muted dark:bg-gray-800 dark:text-white dark:placeholder-gray-400"
                   autoFocus
                 />
               </div>
@@ -214,7 +214,7 @@ export default function Navbar() {
                     </div>
 
                     <div className="grid grid-cols-3 gap-0.5 px-3">
-                      {allCategories.map((category) => (
+                      {remainingCategories.map((category) => (
                         <Link
                           key={category}
                           href={`/category/${slugifyCategory(category)}`}
@@ -275,7 +275,7 @@ export default function Navbar() {
                   Gallery
                 </Link>
 
-                {allCategories.map((category) => (
+                {remainingCategories.map((category) => (
                   <Link
                     key={category}
                     href={`/category/${slugifyCategory(category)}`}

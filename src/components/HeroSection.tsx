@@ -7,7 +7,7 @@ import useSWR from "swr";
 import { fetcher } from "@/lib/fetcher";
 import { formatDate, getImageUrl } from "@/lib/news-utils";
 import { NewsItem } from "@/lib/types";
-import { ChevronLeft, ChevronRight, Play, Clock, User } from "lucide-react";
+import { Play, Clock, User } from "lucide-react";
 
 export default function HeroSection() {
   const { data, isLoading } = useSWR("/api/news", fetcher);
@@ -26,16 +26,6 @@ export default function HeroSection() {
 
     return () => clearInterval(interval);
   }, [featuredNews.length]);
-
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % featuredNews.length);
-  };
-
-  const prevSlide = () => {
-    setCurrentSlide(
-      (prev) => (prev - 1 + featuredNews.length) % featuredNews.length
-    );
-  };
 
   if (isLoading) {
     return (
@@ -121,27 +111,6 @@ export default function HeroSection() {
             </div>
           </div>
         ))}
-
-        {/* Navigation Arrows */}
-        <div className="absolute inset-y-0 left-4 flex items-center">
-          <button
-            onClick={prevSlide}
-            className="p-3 rounded-full bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white transition-colors"
-            aria-label="Previous slide"
-          >
-            <ChevronLeft className="h-6 w-6" />
-          </button>
-        </div>
-
-        <div className="absolute inset-y-0 right-4 flex items-center">
-          <button
-            onClick={nextSlide}
-            className="p-3 rounded-full bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white transition-colors"
-            aria-label="Next slide"
-          >
-            <ChevronRight className="h-6 w-6" />
-          </button>
-        </div>
 
         {/* Slide Indicators */}
         <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex gap-2">

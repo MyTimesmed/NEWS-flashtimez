@@ -48,9 +48,9 @@ export default function TechNews() {
     )
     .slice(0, 3) as NewsItem[];
 
-  // If no tech news found, use general news with tech-related keywords
+  // If no tech news found, use general news starting from index 10 to avoid overlap
   const displayNews =
-    techNews.length > 0 ? techNews : (news.slice(0, 4) as NewsItem[]);
+    techNews.length > 0 ? techNews : (news.slice(10, 14) as NewsItem[]);
 
   return (
     <div>
@@ -103,7 +103,7 @@ export default function TechNews() {
                 </div>
 
                 {/* Title */}
-                <h3 className="font-headline font-semibold text-lg text-white group-hover:text-blue-600 transition-colors mb-3 line-clamp-2 leading-tight">
+                <h3 className="font-headline font-semibold text-lg text-flash-secondary group-hover:text-blue-600 transition-colors mb-3 line-clamp-2 leading-tight">
                   {article.news_Title}
                 </h3>
 

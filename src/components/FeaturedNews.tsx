@@ -49,8 +49,8 @@ export default function FeaturedNews() {
     );
   }
 
-  const featuredArticle = news[0] as NewsItem;
-  const sideArticles = news.slice(1, 5) as NewsItem[];
+  const featuredArticle = news[5] as NewsItem;
+  const sideArticles = news.slice(6, 10) as NewsItem[];
 
   return (
     <section>
