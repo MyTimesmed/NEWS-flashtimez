@@ -71,7 +71,7 @@ export default function Navbar() {
       {/* Main Navigation */}
       <nav
         className={cn(
-          "bg-white/95 backdrop-blur-lg shadow-lg transition-all duration-300",
+          "bg-white/95 dark:bg-gray-900/95 backdrop-blur-lg shadow-lg transition-all duration-300",
           isScrolled && "shadow-xl"
         )}
       >
@@ -137,7 +137,7 @@ export default function Navbar() {
                 <input
                   type="text"
                   placeholder="Search for news, topics, or keywords..."
-                  className="w-full pl-12 pr-4 py-3 border border-flash-light rounded-lg focus:outline-none focus:ring-2 focus:ring-flash-primary focus:border-transparent bg-flash-secondary/5 text-flash-secondary placeholder-flash-muted dark:bg-gray-800 dark:text-white dark:placeholder-gray-400"
+                  className="w-full pl-12 pr-4 py-3 border border-flash-light rounded-lg focus:outline-none focus:ring-2 focus:ring-flash-primary focus:border-transparent bg-flash-secondary/5 text-flash-secondary placeholder-flash-muted dark:bg-gray-800 dark:text-white dark:placeholder-gray-300 dark:border-gray-600"
                   autoFocus
                 />
               </div>

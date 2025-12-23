@@ -51,6 +51,9 @@
     --border-light: #334155;
     --border-medium: #475569;
   }
+  .text-flash-secondary {
+    color: var(--text-secondary);
+  }
 }
 
 * {

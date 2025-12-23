@@ -48,20 +48,12 @@ export default function VideoPage() {
               <div className="relative w-full aspect-video">
                 {v.fileName ? (
                   <>
-                    <iframe
+                    <video
                       src={v.fileName}
                       title={v.videoTitle}
                       className="w-full h-full rounded-lg"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
+                      controls
                     />
-                    <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all duration-300 rounded-lg flex items-end">
-                      <div className="p-4 w-full">
-                        <h2 className="text-lg font-semibold text-white line-clamp-2 drop-shadow-lg">
-                          {v.videoTitle}
-                        </h2>
-                      </div>
-                    </div>
                   </>
                 ) : v.image ? (
                   <div className="relative w-full h-full">
